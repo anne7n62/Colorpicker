@@ -2,8 +2,9 @@
 
 window.addEventListener("DOMContentLoaded", start);
 
-function start(){
+function start(){ //get input
 console.log("start");
+
 
 readInput();
 }
@@ -12,6 +13,7 @@ readInput();
 function readInput(){ // reading the input and getting the HEX
     console.log("reading input");
     let input = document.querySelector(".colorpicker"); //getting the input
+    input.addEventListener("input",readInput); // when user puts in input the calculating starts
     let colorValue = input.value; // variable colorValue is the value of the input
     
     document.querySelector(".HEXoutput").textContent = colorValue; //places the colorvalue in the DOM
