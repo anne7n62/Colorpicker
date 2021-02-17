@@ -9,12 +9,13 @@ console.log("start");
 readInput();
 }
 
-// HVORDAN FÅR JEG DEN TIL AT FANGE INSTANT??? Everytime the user changes the color, the webpage must update the display
 function readInput(){ // reading the input and getting the HEX
     console.log("reading input");
     let input = document.querySelector(".colorpicker"); //getting the input
     input.addEventListener("input",readInput); // when user puts in input the calculating starts
     let colorValue = input.value; // variable colorValue is the value of the input
+
+    document.querySelector("#color").style.backgroundColor = `${colorValue}`; // changes color of div
     
     document.querySelector(".HEXoutput").textContent = colorValue; //places the colorvalue in the DOM
     console.log(`the HEX is ${colorValue}`);
@@ -81,9 +82,9 @@ function calHSL(r2,g2,b2){ //converting rgb to hsl
             s *= 100;
             l *= 100;
           
-            document.querySelector(".HSLoutput").textContent = `${h}, ${s}, ${l}`;
+            document.querySelector(".HSLoutput").textContent = `${h.toFixed(2)}%, ${s.toFixed(2)}%, ${l.toFixed(2)}%`;
             console.log("hsl(%f,%f%,%f%)", h, s, l); // just for testing
-           //SPG: HVORDAN FORKORTER JEG KOMME TALLENE???
+        
             }
 
 
